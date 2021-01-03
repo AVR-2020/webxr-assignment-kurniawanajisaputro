@@ -24,7 +24,7 @@
 
         <a-scene>
 			<a-assets>  
-                <a-asset-item id="garage" src="assets/scene.gltf"></a-asset-item>
+                <a-asset-item id="garage" src="assets/scene1.glb"></a-asset-item>
 				<a-asset-item id="mobil1" src="assets/Buggati_atlantic/scene.gltf"></a-asset-item>
 				<a-asset-item id="mobil2" src="assets/lamborghini_aventador/scene.gltf"></a-asset-item>
 				<a-asset-item id="mobil3" src="assets/bentley_continental/scene.gltf"></a-asset-item>
@@ -34,13 +34,60 @@
 
             <a-entity sound="src:assets/FP.mp3;loop: true;autoplay: true;refDistance: 2" gltf-model="#garage" scale="0.7 0.7 0.7"></a-entity>
 			<a-entity checkpoint gltf-model="#mobil1" scale="0.1 0.1 0.1" position="-200 -80 0.1" rotation="0 100 0" ></a-entity>
+			<a-text
+            id="informasi"
+            align="center"
+            value="informasi buggati atlantic
+					Type 57 asli adalah model mobil touring yang diproduksi dari tahun 1934 sampai 1940. Ini menggunakan mesin 3,3 L (3.257 cc; 198 cu in) dari mobil Type 59 Grand Prix, menghasilkan 135 hp (100 kW). Kecepatan tertinggi adalah 153 km / jam (95 mph), dengan jarak sumbu roda 3.302 mm (130 in) dan memiliki lebar lintasan 1.349 mm (53 in). Versi road-going memiliki berat sekitar 950 kg (2.090 lb). Rem hidrolik menggantikan unit yang dioperasikan dengan kabel pada tahun 1938, modifikasi Ettore Bugatti diperebutkan dengan panas. 630 unit diproduksi.Jenis 57 yang akan digunakan di jalan raya termasuk versi yang lebih kecil dari kisi-kisi tapal kuda alas persegi Royale. Sisi kompartemen mesin ditutup dengan penutup yang dikendalikan secara termostatis. Itu adalah mobil yang tinggi, bertentangan dengan selera saat itu.
+Ukuran:
+Jarak sumbu roda: 3.302 mm (130 in)
+Trek: 1.349 mm (53 inci)
+Berat: 950 kg (2.090 lb)"
+            position="-141.322 -39.600 -6.605"
+            rotation="0 100 0"
+            scale="10 10 10"
+            side="double"
+
+        ></a-text>
 			<a-entity checkpoint gltf-model="#mobil2" scale="0.2 0.2 0.2" position="0.1 -80 -200" rotation="0 0 0"></a-entity>
+			<a-text
+            id="informasi"
+            align="center"
+            value="informasi Lamborghini Aventador J
+					Aventador J adalah mobil dari Lamborghini, dengan penggerak semua roda, mesin yang dipasang di tengah, dan bodi roadster 2 pintu bergaya Felippo Perini. Mesin Lamborghini Aventador J adalah bensin yang disedot secara alami, 6,5 liter, camshaft overhead ganda 60 derajat V 12 silinder dengan 4 katup per silinder. Ini mengembangkan tenaga 690 bhp (700 PS / 515 kW) pada 8250 rpm, dan torsi maksimum 690 N · m (509 lb · ft / 70,4 kgm) pada 5500 rpm. Dilengkapi dengan pelumasan tipe bah kering. Gearbox otomatis 7 kecepatan mentransmisikan daya ke roda yang digerakkan. Berat trotoar yang dinyatakan adalah 1.575 kg. "
+            position="-0.104 -49.068 -109.669"
+            rotation="0 0 0"
+            scale="10 10 10"
+            side="double"
+
+        ></a-text>
 			<a-entity checkpoint gltf-model="#mobil3" scale="0.3 0.3 0.3" position="199.068 -102.286 -0.753" rotation="0 -100 0"></a-entity>
-			<a-entity checkpoint gltf-model="#mobil4" scale="0.2 0.2 0.2" position="1.989 -104.972 193.252" rotation="-182.260 0 -182.220"></a-entity>		
+			<a-text
+            id="informasi"
+            align="center"
+            value="informasi Bentley Continental GT
+					Continental GT dilengkapi dengan mesin W12 twin-turbocharged 6.0 liter, yang menghasilkan output daya DIN sebesar 560 PS (412 kW; 552 bhp) pada 6.100 rpm, dan torsi 650 N⋅m (479 lbf⋅ft) pada 1.600–6.100 rpm. Penggerak empat roda permanen berbasis Torsen adalah standar."
+            position="130.728 -50.843 -10.028"
+            rotation="0 -100 0"
+            scale="10 10 10"
+            side="double"
+
+        ></a-text>
+			<a-entity checkpoint gltf-model="#mobil4" scale="0.2 0.2 0.2" position="1.989 -104.972 193.252" rotation="-182.260 0 -182.220"></a-entity>
+			<a-text
+            id="informasi"
+            align="center"
+            value="informasi Mercedes Benz SLS AMG
+					SLS AMG GT adalah supercar yang sangat cepat dan langka yang mengingatkan kembali pada Gullwings dahulu kala. Ini didukung oleh V-8 6,2 liter yang menghasilkan 583 hp, dikawinkan dengan transmisi otomatis kopling ganda tujuh kecepatan dan penggerak roda belakang. Punya uang tunai untuk dibakar? Pilihlah Black Series dengan 622 hp dan perangkat cepat lainnya. Apa pun pilihan Anda, SLS tetaplah Mercedes, penuh dengan interior yang mewah dan tertata apik. Kegilaan akan segera diakhiri dengan SLS AMG GT Final Edition 2015. "
+            position="-0.511 -56.929 121.438"
+            rotation="-182.260 0 -182.220"
+            scale="10 10 10"
+            side="double"
+
+        ></a-text>		
 			<a-entity sound="src:assets/FP.mp3;loop: true;autoplay: true;volume: 0.5;refDistance:25" id="mp3player"></a-entity>
 			<a-entity checkpoint movement-controls="controls: checkpoint" checkpoint-controls="mode: animate;animateSpeed:5"> 
 			 		<a-camera>
-					
 				 		<a-cursor></a-cursor>
             	</a-camera>
         </a-entity>
