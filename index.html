@@ -4,26 +4,42 @@
         <title>Semolowaru Car Dealership</title>
         <meta name="description" content="Study about car dealer">
         <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
     </head>
 
     <body>
+	<script>
+        AFRAME.registerComponent("navlog",{
+            init:function() {
+                this.el.addEventListener('navigation-start', function(){
+                    console.log("%cSTART", "font-size:2em;color:green");
+                });
+                this.el.addEventListener('navigation-end', function(){
+                    console.log("%cEND", "font-size:2em;color:red");
+                });
+            }
+        });
+    </script>
+
         <a-scene>
-            <a-assets>  
+			<a-assets>  
                 <a-asset-item id="garage" src="assets/scene.gltf"></a-asset-item>
 				<a-asset-item id="mobil1" src="assets/Buggati_atlantic/scene.gltf"></a-asset-item>
 				<a-asset-item id="mobil2" src="assets/lamborghini_aventador/scene.gltf"></a-asset-item>
 				<a-asset-item id="mobil3" src="assets/bentley_continental/scene.gltf"></a-asset-item>
 				<a-asset-item id="mobil4" src="assets/mercedes_benz/scene.gltf"></a-asset-item>
+				<a-assets><audio id="song" src="assets/FP.mp3" preload="auto"></audio> </a-assets>
             </a-assets>
 
             <a-entity gltf-model="#garage" scale="0.7 0.7 0.7"></a-entity>
-			<a-entity gltf-model="#mobil1" scale="0.1 0.1 0.1" position="-200 -80 0.1" rotation="0 100 0"></a-entity>
-			<a-entity gltf-model="#mobil2" scale="0.2 0.2 0.2" position="0.1 -80 -200" rotation="0 0 0"></a-entity>
-			<a-entity gltf-model="#mobil3" scale="0.3 0.3 0.3" position="199.068 -102.286 -0.753" rotation="0 -100 0"></a-entity>
-			<a-entity gltf-model="#mobil4" scale="0.2 0.2 0.2" position="2.237 -97.644 196.788" rotation="-182.260 0 -182.220"></a-entity>
-			<a-entity movement-controls="controls: checkpoint" checkpoint-controls="mode: animate;animateSpeed:5">
-           	 		<a-camera>
+			<a-entity checkpoint gltf-model="#mobil1" scale="0.1 0.1 0.1" position="-200 -80 0.1" rotation="0 100 0"></a-entity>
+			<a-entity checkpoint gltf-model="#mobil2" scale="0.2 0.2 0.2" position="0.1 -80 -200" rotation="0 0 0"></a-entity>
+			<a-entity checkpoint gltf-model="#mobil3" scale="0.3 0.3 0.3" position="199.068 -102.286 -0.753" rotation="0 -100 0"></a-entity>
+			<a-entity checkpoint gltf-model="#mobil4" scale="0.2 0.2 0.2" position="1.989 -104.972 193.252" rotation="-182.260 0 -182.220"></a-entity>
+			<a-entity checkpoint movement-controls="controls: checkpoint" checkpoint-controls="mode: animate;animateSpeed:5">
+           	<a-entity sound="src: #song; autoplay: true;loop: true "></a-entity> 
+			 		<a-camera>
                 			<a-cursor></a-cursor>
             	</a-camera>
         </a-entity>
