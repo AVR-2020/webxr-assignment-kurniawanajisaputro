@@ -1,3 +1,4 @@
+  
 <html>
 
     <head>
@@ -88,7 +89,7 @@ Berat: 950 kg (2.090 lb)"
 			<a-entity sound="src:assets/FP.mp3;loop: true;autoplay: true;volume: 0.5;refDistance:25" id="mp3player"></a-entity>
 			<a-entity checkpoint movement-controls="controls: checkpoint" checkpoint-controls="mode: animate;animateSpeed:5"> 
 			 		<a-camera>
-				 		<a-cursor></a-cursor>
+				 		<a-cursor><a-cursor><a-cursor laser-controls="hand: right" raycaster="objects: .clickable"></a-cursor></a-cursor></a-cursor>
             	</a-camera>
         </a-entity>
         <a-circle
