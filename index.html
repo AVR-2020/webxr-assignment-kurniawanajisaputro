@@ -6,6 +6,7 @@
         <meta name="description" content="Study about car dealer">
         <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+		<script src="https://unpkg.com/aframe-animation-component@%5E5.1.2/dist/aframe-animation-component.min.js%22%3E"></script>
 
     </head>
 
@@ -24,6 +25,10 @@
     </script>
 
         <a-scene>
+			<a-mixin id="rotation1" animation="property: rotation; loop: true; from: 0 0 0; to: 0 360 0; dur: 20000; easing: linear;"></a-mixin>
+			<a-mixin id="rotation2" animation="property: rotation; loop: true; from: 0 0 0; to: 0 360 0; dur: 20000; easing: linear;"></a-mixin>
+			<a-mixin id="rotation3" animation="property: rotation; loop: true; from: 0 0 0; to: 0 360 0; dur: 20000; easing: linear;"></a-mixin>
+			<a-mixin id="rotation4" animation="property: rotation; loop: true; from: 0 0 0; to: 0 360 0; dur: 20000; easing: linear;"></a-mixin>
 			<a-assets>  
                 <a-asset-item id="garage" src="assets/scene1.glb"></a-asset-item>
 				<a-asset-item id="mobil1" src="assets/Buggati_atlantic/scene.gltf"></a-asset-item>
@@ -34,7 +39,7 @@
             </a-assets>
 
             <a-entity sound="src:assets/FP.mp3;loop: true;autoplay: true;refDistance: 2" gltf-model="#garage" scale="0.7 0.7 0.7"></a-entity>
-			<a-entity checkpoint gltf-model="#mobil1" scale="0.1 0.1 0.1" position="-200 -80 0.1" rotation="0 100 0" ></a-entity>
+			<a-entity mixin="rotation1" class="clickable" checkpoint gltf-model="#mobil1" scale="0.1 0.1 0.1" position="-200.000 -81.900 0.1" rotation="0 100 0" ></a-entity>
 			<a-text
             id="informasi"
             align="center"
@@ -50,7 +55,7 @@ Berat: 950 kg (2.090 lb)"
             side="double"
 
         ></a-text>
-			<a-entity checkpoint gltf-model="#mobil2" scale="0.2 0.2 0.2" position="0.1 -80 -200" rotation="0 0 0"></a-entity>
+			<a-entity mixin="rotation2" class="clickable" checkpoint gltf-model="#mobil2" scale="0.15 0.15 0.15" position="0.1 -80 -180.030" rotation="0 0 0"></a-entity>
 			<a-text
             id="informasi"
             align="center"
@@ -62,19 +67,19 @@ Berat: 950 kg (2.090 lb)"
             side="double"
 
         ></a-text>
-			<a-entity checkpoint gltf-model="#mobil3" scale="0.3 0.3 0.3" position="199.068 -102.286 -0.753" rotation="0 -100 0"></a-entity>
+			<a-entity mixin="rotation3" class="clickable" checkpoint gltf-model="#mobil3" scale="0.25 0.25 0.25" position="172.546 -106.564 -0.753" rotation="0 -100 0"></a-entity>
 			<a-text
             id="informasi"
             align="center"
             value="informasi Bentley Continental GT
 					Continental GT dilengkapi dengan mesin W12 twin-turbocharged 6.0 liter, yang menghasilkan output daya DIN sebesar 560 PS (412 kW; 552 bhp) pada 6.100 rpm, dan torsi 650 N⋅m (479 lbf⋅ft) pada 1.600–6.100 rpm. Penggerak empat roda permanen berbasis Torsen adalah standar."
-            position="130.728 -50.843 -10.028"
+            position="116.478 -65.808 -7.187"
             rotation="0 -100 0"
             scale="10 10 10"
             side="double"
 
         ></a-text>
-			<a-entity checkpoint gltf-model="#mobil4" scale="0.2 0.2 0.2" position="1.989 -104.972 193.252" rotation="-182.260 0 -182.220"></a-entity>
+			<a-entity mixin="rotation4" class="clickable" checkpoint gltf-model="#mobil4" scale="0.15 0.15 0.15" position="-2.737 -105.781 175.724" rotation="-182.260 0 -182.220"></a-entity>
 			<a-text
             id="informasi"
             align="center"
@@ -86,27 +91,11 @@ Berat: 950 kg (2.090 lb)"
             side="double"
 
         ></a-text>		
-			<a-entity sound="src:assets/FP.mp3;loop: true;autoplay: true;volume: 0.5;refDistance:25" id="mp3player"></a-entity>
-			<a-entity checkpoint movement-controls="controls: checkpoint" checkpoint-controls="mode: animate;animateSpeed:5"> 
+			<a-entity class="cliclable" sound="src:assets/FP.mp3;loop: true;autoplay: true;volume: 0.5;refDistance:25" id="mp3player"></a-entity>
+			<a-entity class="clickable" checkpoint movement-controls="controls: checkpoint" checkpoint-controls="mode: animate;animateSpeed:5"> 
 			 		<a-camera>
-				 		<a-cursor><a-cursor><a-cursor laser-controls="hand: right" raycaster="objects: .clickable"></a-cursor></a-cursor></a-cursor>
+				 		<a-cursor laser-controls="hand: right" raycaster="objects: .clickable"></a-cursor>
             	</a-camera>
         </a-entity>
-        <a-circle
-            checkpoint+
-            color="#500" 
-            position="0 0.1 -3" 
-            rotation="-90 0 0"></a-circle>
-        <a-circle
-            checkpoint
-            color="#550"
-            position="-5 0.1 -3"
-            rotation="-90 0 0"></a-circle>
-        <a-circle 
-            checkpoint
-            color="#050" 
-            position="5 1.4 -3" 
-            rotation="-90 0 0"></a-circle>
-    </body>
 
 </html>
